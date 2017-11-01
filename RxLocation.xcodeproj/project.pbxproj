@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		702C5237B325836459BB79A6 /* Pods_RxLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */; };
+		771553CE1FA9CF0900459045 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553CD1FA9CF0900459045 /* main.swift */; };
 		772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772F65441FA9ABCF00657695 /* AppDelegate.swift */; };
 		772F654A1FA9ABCF00657695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772F65481FA9ABCF00657695 /* Main.storyboard */; };
 		772F654C1FA9ABCF00657695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772F654B1FA9ABCF00657695 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		588FBA81307C28CE99132A47 /* Pods-RxLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.release.xcconfig"; sourceTree = "<group>"; };
+		771553CD1FA9CF0900459045 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		772F65411FA9ABCF00657695 /* RxLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772F65441FA9ABCF00657695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772F65491FA9ABCF00657695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		771553CB1FA9CED300459045 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				772F654B1FA9ABCF00657695 /* Assets.xcassets */,
+				772F654D1FA9ABCF00657695 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		771553CF1FA9CF7D00459045 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				772F65501FA9ABCF00657695 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		772F65381FA9ABCF00657695 = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +113,11 @@
 		772F65431FA9ABCF00657695 /* RxLocation */ = {
 			isa = PBXGroup;
 			children = (
+				771553CF1FA9CF7D00459045 /* Support */,
+				771553CB1FA9CED300459045 /* Resources */,
 				772F65441FA9ABCF00657695 /* AppDelegate.swift */,
+				771553CD1FA9CF0900459045 /* main.swift */,
 				772F65481FA9ABCF00657695 /* Main.storyboard */,
-				772F654B1FA9ABCF00657695 /* Assets.xcassets */,
-				772F654D1FA9ABCF00657695 /* LaunchScreen.storyboard */,
-				772F65501FA9ABCF00657695 /* Info.plist */,
 			);
 			path = RxLocation;
 			sourceTree = "<group>";
@@ -344,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771553CE1FA9CF0900459045 /* main.swift in Sources */,
 				772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

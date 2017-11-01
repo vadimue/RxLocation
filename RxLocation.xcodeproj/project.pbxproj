@@ -15,6 +15,7 @@
 		772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772F65441FA9ABCF00657695 /* AppDelegate.swift */; };
 		772F654C1FA9ABCF00657695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772F654B1FA9ABCF00657695 /* Assets.xcassets */; };
 		772F654F1FA9ABCF00657695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772F654D1FA9ABCF00657695 /* LaunchScreen.storyboard */; };
+		77AE8A3A1FA9FEFB00BB51B6 /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE8A391FA9FEFB00BB51B6 /* UILabel+Rx.swift */; };
 		9230720BCBA5DEF3F6ABB05C /* Pods_RxLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		772F65501FA9ABCF00657695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772F65551FA9ABCF00657695 /* RxLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		772F655B1FA9ABCF00657695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77AE8A391FA9FEFB00BB51B6 /* UILabel+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx.swift"; sourceTree = "<group>"; };
 		B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11B282D8B4725173774F364 /* Pods-RxLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		D823921A97528A74FB53D76F /* Pods-RxLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		772F65431FA9ABCF00657695 /* RxLocation */ = {
 			isa = PBXGroup;
 			children = (
+				77AE8A381FA9FEBD00BB51B6 /* Extensions */,
 				771553D61FA9D25F00459045 /* Models */,
 				771553D11FA9D1F400459045 /* Tracking */,
 				771553CF1FA9CF7D00459045 /* Support */,
@@ -150,6 +153,14 @@
 				772F655B1FA9ABCF00657695 /* Info.plist */,
 			);
 			path = RxLocationTests;
+			sourceTree = "<group>";
+		};
+		77AE8A381FA9FEBD00BB51B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77AE8A391FA9FEFB00BB51B6 /* UILabel+Rx.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7AFC10E1F4E8700A2DCDA326 /* Pods */ = {
@@ -387,6 +398,7 @@
 			files = (
 				771553D31FA9D22600459045 /* TrackingViewController.swift in Sources */,
 				771553CE1FA9CF0900459045 /* main.swift in Sources */,
+				77AE8A3A1FA9FEFB00BB51B6 /* UILabel+Rx.swift in Sources */,
 				772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */,
 				771553D51FA9D23A00459045 /* TrackingReactor.swift in Sources */,
 			);

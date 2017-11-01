@@ -6,9 +6,49 @@
 //  Copyright © 2017 Vadim Inc. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
+import ReactorKit
 
-class TrackingViewController: UIViewController {
-  
+class TrackingViewController: UIViewController, StoryboardView {
+  var disposeBag = DisposeBag()
+
+  @IBOutlet weak var autoTrackingLabel: UILabel!
+  @IBOutlet weak var autoTrackingSwitch: UISwitch!
+  @IBOutlet weak var activePositionLabel: UILabel!
+  @IBOutlet weak var lastPositionLabel: UILabel!
+  @IBOutlet weak var lastTimeLabel: UILabel!
+  @IBOutlet weak var transferPositionButton: UIButton!
+  @IBOutlet weak var showPositionOnMapButton: UIButton!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    reactor = TrackingReactor()
+  }
+
+  func bind(reactor: TrackingReactor) {
+
+    autoTrackingSwitch.rx.value
+      .map(Reactor.Action.toggleAutoTracking)
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+
+    // State
+    let isAutoTrackingActive = reactor.state.asObservable()
+      .map { $0.isAutoTrackingActive }.distinctUntilChanged()
+
+    isAutoTrackingActive
+      .bind(to: autoTrackingSwitch.rx.value)
+      .disposed(by: disposeBag)
+
+    isAutoTrackingActive.map { $0 ? "Auto-Tracking active" : "Auto-Tracking inactive" }
+      .bind(to: autoTrackingLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    isAutoTrackingActive.map { $0 ? UIColor.green : UIColor.red }
+      .bind(to: autoTrackingLabel.rx.backgroundColor)
+      .disposed(by: disposeBag)
+  }
 }
+

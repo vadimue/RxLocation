@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="j0J-4W-7Iw">
                                 <rect key="frame" x="16" y="80" width="343" height="284"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Tracking inaktive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-aq-cPT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Tracking inactive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-aq-cPT">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.37647058820000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -122,6 +122,15 @@
                         <viewLayoutGuide key="safeArea" id="g2A-FS-fah"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tracking" id="GZy-k9-x2B"/>
+                    <connections>
+                        <outlet property="activePositionLabel" destination="rsw-iE-zOk" id="OQ8-gm-EE9"/>
+                        <outlet property="autoTrackingLabel" destination="z1f-aq-cPT" id="SOc-3z-ynj"/>
+                        <outlet property="autoTrackingSwitch" destination="Z4S-fS-8Uk" id="pkr-jX-HBW"/>
+                        <outlet property="lastPositionLabel" destination="7zC-ac-9am" id="aJX-gh-6rk"/>
+                        <outlet property="lastTimeLabel" destination="Qxt-Xp-QXs" id="v4Q-AU-BrX"/>
+                        <outlet property="showPositionOnMapButton" destination="1uh-1c-xkN" id="Vbs-wi-93s"/>
+                        <outlet property="transferPositionButton" destination="DUP-q4-Mwb" id="kY0-ST-VM6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6c-1N-WsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

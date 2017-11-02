@@ -20,6 +20,7 @@ final class TrackingReactor: Reactor {
 
   enum Mutation {
     case toggleAutoTracking(Bool)
+    case updateActivePosition(CLLocation)
   }
 
   struct State {
@@ -30,8 +31,15 @@ final class TrackingReactor: Reactor {
 
   let initialState: State
 
+  let locationService: LocationServiceProtocol
+
   init() {
     initialState = State(isAutoTrackingActive: false, activePosition: CLLocation(), lastPosition: CLLocation())
+    locationService = LocationService {
+      let manager = CLLocationManager()
+      manager.desiredAccuracy = kCLLocationAccuracyBest
+      return manager
+    }
   }
 
   func mutate(action: Action) -> Observable<Mutation> {
@@ -48,7 +56,26 @@ final class TrackingReactor: Reactor {
     switch mutation {
     case .toggleAutoTracking(let enabled):
       state.isAutoTrackingActive = enabled
+    case .updateActivePosition(let activePosition):
+      state.lastPosition = state.activePosition
+      state.activePosition = activePosition
     }
     return state
+  }
+
+  func transform(mutation: Observable<TrackingReactor.Mutation>) -> Observable<Mutation> {
+    return .merge(mutation, getActivePosition(mutation))
+  }
+
+  private func getActivePosition(_ mutation: Observable<Mutation>) -> Observable<Mutation> {
+    return mutation.flatMapLatest { [weak self] mutating -> Observable<CLLocation> in
+        guard let `self` = self else { return .empty() }
+        switch mutating {
+        case .toggleAutoTracking(let isActive):
+          return isActive ? self.locationService.location() : .empty()
+        default:
+          return .never()
+        }
+      }.map(Mutation.updateActivePosition)
   }
 }

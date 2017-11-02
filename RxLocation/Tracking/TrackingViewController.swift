@@ -49,6 +49,21 @@ class TrackingViewController: UIViewController, StoryboardView {
     isAutoTrackingActive.map { $0 ? UIColor.green : UIColor.red }
       .bind(to: autoTrackingLabel.rx.backgroundColor)
       .disposed(by: disposeBag)
+
+    reactor.state.asObservable()
+      .map { $0.activePosition }
+      .bind(to: activePositionLabel.rx.locationText)
+      .disposed(by: disposeBag)
+
+    reactor.state.asObservable()
+      .map { $0.lastPosition }
+      .bind(to: lastPositionLabel.rx.locationText)
+      .disposed(by: disposeBag)
+
+    reactor.state.asObservable()
+      .map { $0.lastPosition.timestamp }
+      .bind(to: lastTimeLabel.rx.timeText)
+      .disposed(by: disposeBag)
   }
 }
 

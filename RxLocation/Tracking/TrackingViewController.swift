@@ -29,11 +29,6 @@ class TrackingViewController: UIViewController, StoryboardView {
 
   func bind(reactor: TrackingReactor) {
 
-    autoTrackingSwitch.rx.value
-      .map(Reactor.Action.toggleAutoTracking)
-      .bind(to: reactor.action)
-      .disposed(by: disposeBag)
-
     // State
     let isAutoTrackingActive = reactor.state.asObservable()
       .map { $0.isAutoTrackingActive }.distinctUntilChanged()
@@ -63,6 +58,12 @@ class TrackingViewController: UIViewController, StoryboardView {
     reactor.state.asObservable()
       .map { $0.lastPosition.timestamp }
       .bind(to: lastTimeLabel.rx.timeText)
+      .disposed(by: disposeBag)
+
+    // Action
+    autoTrackingSwitch.rx.value
+      .map(Reactor.Action.toggleAutoTracking)
+      .bind(to: reactor.action)
       .disposed(by: disposeBag)
   }
 }

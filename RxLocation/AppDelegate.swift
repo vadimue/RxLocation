@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,7 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    initialize()
     return true
+  }
+}
+
+// MARK: Initializers
+
+extension AppDelegate: Initializer {
+  var initializers: [Initializer] {
+    return [
+      LocationInitializer(LocationService {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        return manager
+      })
+    ]
+  }
+
+  func initialize() {
+    for initializer in self.initializers {
+      initializer.initialize()
+    }
   }
 }
 

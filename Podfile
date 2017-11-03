@@ -5,6 +5,8 @@ target 'RxLocation' do
 
   # Architecture
   pod 'ReactorKit'
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
 
   # Rx
   pod 'RxSwift'

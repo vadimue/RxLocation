@@ -8,14 +8,22 @@
 
 import UIKit
 import CoreLocation
+import SwinjectStoryboard
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
     initialize()
+
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.makeKeyAndVisible()
+    self.window = window
+
+    let storyboard = SwinjectStoryboard.create(name: "Tracking", bundle: nil, container: Injector.resolver)
+    window.rootViewController = storyboard.instantiateInitialViewController()
+
     return true
   }
 }
@@ -24,12 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: Initializer {
   var initializers: [Initializer] {
+    let resolver = Injector.resolver
     return [
-      LocationInitializer(LocationService {
-        let manager = CLLocationManager()
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        return manager
-      })
+      LocationInitializer(resolver.resolve(LocationServiceProtocol.self))
     ]
   }
 

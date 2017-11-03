@@ -22,6 +22,10 @@
 		772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772F65441FA9ABCF00657695 /* AppDelegate.swift */; };
 		772F654C1FA9ABCF00657695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772F654B1FA9ABCF00657695 /* Assets.xcassets */; };
 		772F654F1FA9ABCF00657695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772F654D1FA9ABCF00657695 /* LaunchScreen.storyboard */; };
+		7780D59C1FACA7B7000CE951 /* TrackingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D59B1FACA7B7000CE951 /* TrackingAssembly.swift */; };
+		7780D5A51FACB5CB000CE951 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A21FACB5CB000CE951 /* Injector.swift */; };
+		7780D5A61FACB5CB000CE951 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */; };
+		7780D5A71FACB5CB000CE951 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A41FACB5CB000CE951 /* SwinjectStoryboardExtension.swift */; };
 		77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */; };
 		9230720BCBA5DEF3F6ABB05C /* Pods_RxLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		772F65501FA9ABCF00657695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772F65551FA9ABCF00657695 /* RxLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		772F655B1FA9ABCF00657695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7780D59B1FACA7B7000CE951 /* TrackingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingAssembly.swift; sourceTree = "<group>"; };
+		7780D5A21FACB5CB000CE951 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		7780D5A41FACB5CB000CE951 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
 		77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11B282D8B4725173774F364 /* Pods-RxLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 			children = (
 				771553D21FA9D22600459045 /* TrackingViewController.swift */,
 				771553D41FA9D23A00459045 /* TrackingReactor.swift */,
+				7780D59B1FACA7B7000CE951 /* TrackingAssembly.swift */,
 				771553D71FA9DB3800459045 /* Tracking.storyboard */,
 			);
 			path = Tracking;
@@ -147,6 +156,7 @@
 		771982371FAB082500C1165E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7780D5A11FACB5CB000CE951 /* IoC */,
 				7719823E1FAB156E00C1165E /* Initializers */,
 				771982381FAB088500C1165E /* Location */,
 			);
@@ -213,6 +223,16 @@
 				772F655B1FA9ABCF00657695 /* Info.plist */,
 			);
 			path = RxLocationTests;
+			sourceTree = "<group>";
+		};
+		7780D5A11FACB5CB000CE951 /* IoC */ = {
+			isa = PBXGroup;
+			children = (
+				7780D5A21FACB5CB000CE951 /* Injector.swift */,
+				7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */,
+				7780D5A41FACB5CB000CE951 /* SwinjectStoryboardExtension.swift */,
+			);
+			path = IoC;
 			sourceTree = "<group>";
 		};
 		77AE8A381FA9FEBD00BB51B6 /* Extensions */ = {
@@ -419,6 +439,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -426,6 +448,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -457,14 +481,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7780D5A61FACB5CB000CE951 /* ServiceAssembly.swift in Sources */,
 				771553D31FA9D22600459045 /* TrackingViewController.swift in Sources */,
 				7719823C1FAB08BE00C1165E /* LocationServiceProtocol.swift in Sources */,
 				771553CE1FA9CF0900459045 /* main.swift in Sources */,
 				7719823B1FAB08BE00C1165E /* LocationService.swift in Sources */,
+				7780D59C1FACA7B7000CE951 /* TrackingAssembly.swift in Sources */,
+				7780D5A51FACB5CB000CE951 /* Injector.swift in Sources */,
 				771982401FAB158100C1165E /* Initializer.swift in Sources */,
 				771982421FAB159600C1165E /* LocationInitializer.swift in Sources */,
 				771982441FAB189B00C1165E /* UILabel+Rx.swift in Sources */,
 				77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */,
+				7780D5A71FACB5CB000CE951 /* SwinjectStoryboardExtension.swift in Sources */,
 				771982351FAA24A400C1165E /* CLLocationManager+Rx.swift in Sources */,
 				771982361FAA24A400C1165E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				772F65451FA9ABCF00657695 /* AppDelegate.swift in Sources */,

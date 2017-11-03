@@ -33,13 +33,9 @@ final class TrackingReactor: Reactor {
 
   let locationService: LocationServiceProtocol
 
-  init() {
-    initialState = State(isAutoTrackingActive: false, activePosition: CLLocation(), lastPosition: CLLocation())
-    locationService = LocationService {
-      let manager = CLLocationManager()
-      manager.desiredAccuracy = kCLLocationAccuracyBest
-      return manager
-    }
+  init(locationService: LocationServiceProtocol) {
+    self.locationService = locationService
+    initialState = State(isAutoTrackingActive: true, activePosition: CLLocation(), lastPosition: CLLocation())
   }
 
   func mutate(action: Action) -> Observable<Mutation> {

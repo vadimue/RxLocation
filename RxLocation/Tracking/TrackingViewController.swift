@@ -22,11 +22,6 @@ class TrackingViewController: UIViewController, StoryboardView {
   @IBOutlet weak var transferPositionButton: UIButton!
   @IBOutlet weak var showPositionOnMapButton: UIButton!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    reactor = TrackingReactor()
-  }
-
   func bind(reactor: TrackingReactor) {
 
     // State

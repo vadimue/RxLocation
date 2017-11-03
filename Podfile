@@ -7,6 +7,7 @@ target 'RxLocation' do
   pod 'ReactorKit'
   pod 'Swinject'
   pod 'SwinjectStoryboard'
+  pod 'SwinjectAutoregistration'
 
   # Rx
   pod 'RxSwift'

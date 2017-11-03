@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import SwinjectStoryboard
 import Swinject
+import SwinjectStoryboard
+import SwinjectAutoregistration
 
 final class TrackingAssembly: Assembly {
   func assemble(container: Container) {
-    container.register(TrackingReactor.self) { resolver in
-      TrackingReactor(locationService: resolver.resolve(LocationServiceProtocol.self)!)
-    }
+    container.autoregister(TrackingReactor.self, initializer: TrackingReactor.init)
 
     container.storyboardInitCompleted(TrackingViewController.self) { resolver, controller in
       controller.reactor = resolver.resolve(TrackingReactor.self)

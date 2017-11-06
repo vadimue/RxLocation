@@ -16,9 +16,8 @@ target 'RxLocation' do
 
   # Testing
   target 'RxLocationTests' do
-    inherit! :search_paths
-    
     pod 'RxTest'
+    pod 'RxExpect'
   end
 
 end

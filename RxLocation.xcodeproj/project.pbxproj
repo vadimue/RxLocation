@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1050D725B090004D2EAB3D7D /* Pods_RxLocation_RxLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */; };
 		702C5237B325836459BB79A6 /* Pods_RxLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */; };
 		771553CE1FA9CF0900459045 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553CD1FA9CF0900459045 /* main.swift */; };
 		771553D31FA9D22600459045 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553D21FA9D22600459045 /* TrackingViewController.swift */; };
@@ -26,6 +27,8 @@
 		7780D5A51FACB5CB000CE951 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A21FACB5CB000CE951 /* Injector.swift */; };
 		7780D5A61FACB5CB000CE951 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */; };
 		7780D5A71FACB5CB000CE951 /* SwinjectStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5A41FACB5CB000CE951 /* SwinjectStoryboardExtension.swift */; };
+		7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */; };
+		7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */; };
 		77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */; };
 		9230720BCBA5DEF3F6ABB05C /* Pods_RxLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143751E752CE39C4760572E4 /* Pods-RxLocation-RxLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation-RxLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation-RxLocationTests/Pods-RxLocation-RxLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		588FBA81307C28CE99132A47 /* Pods-RxLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.release.xcconfig"; sourceTree = "<group>"; };
+		6B1DE4107B4AE3C93422E8A7 /* Pods-RxLocation-RxLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation-RxLocationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation-RxLocationTests/Pods-RxLocation-RxLocationTests.release.xcconfig"; sourceTree = "<group>"; };
 		771553CD1FA9CF0900459045 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		771553D21FA9D22600459045 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		771553D41FA9D23A00459045 /* TrackingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingReactor.swift; sourceTree = "<group>"; };
@@ -64,8 +69,11 @@
 		7780D5A21FACB5CB000CE951 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		7780D5A41FACB5CB000CE951 /* SwinjectStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardExtension.swift; sourceTree = "<group>"; };
+		7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingReactorTests.swift; sourceTree = "<group>"; };
+		7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation_RxLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11B282D8B4725173774F364 /* Pods-RxLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		D823921A97528A74FB53D76F /* Pods-RxLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				702C5237B325836459BB79A6 /* Pods_RxLocationTests.framework in Frameworks */,
+				1050D725B090004D2EAB3D7D /* Pods_RxLocation_RxLocationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +106,7 @@
 			children = (
 				B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */,
 				DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */,
+				B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,8 +131,8 @@
 		771553D11FA9D1F400459045 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				771553D21FA9D22600459045 /* TrackingViewController.swift */,
 				771553D41FA9D23A00459045 /* TrackingReactor.swift */,
+				771553D21FA9D22600459045 /* TrackingViewController.swift */,
 				7780D59B1FACA7B7000CE951 /* TrackingAssembly.swift */,
 				771553D71FA9DB3800459045 /* Tracking.storyboard */,
 			);
@@ -220,6 +230,8 @@
 		772F65581FA9ABCF00657695 /* RxLocationTests */ = {
 			isa = PBXGroup;
 			children = (
+				7780D5AD1FACC3C9000CE951 /* Mocks */,
+				7780D5A81FACC23A000CE951 /* TrackingTests */,
 				772F655B1FA9ABCF00657695 /* Info.plist */,
 			);
 			path = RxLocationTests;
@@ -233,6 +245,22 @@
 				7780D5A31FACB5CB000CE951 /* ServiceAssembly.swift */,
 			);
 			path = IoC;
+			sourceTree = "<group>";
+		};
+		7780D5A81FACC23A000CE951 /* TrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */,
+			);
+			path = TrackingTests;
+			sourceTree = "<group>";
+		};
+		7780D5AD1FACC3C9000CE951 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		77AE8A381FA9FEBD00BB51B6 /* Extensions */ = {
@@ -251,6 +279,8 @@
 				588FBA81307C28CE99132A47 /* Pods-RxLocation.release.xcconfig */,
 				D823921A97528A74FB53D76F /* Pods-RxLocationTests.debug.xcconfig */,
 				EB0BEFE06DED85649AD47656 /* Pods-RxLocationTests.release.xcconfig */,
+				143751E752CE39C4760572E4 /* Pods-RxLocation-RxLocationTests.debug.xcconfig */,
+				6B1DE4107B4AE3C93422E8A7 /* Pods-RxLocation-RxLocationTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -315,6 +345,7 @@
 					};
 					772F65541FA9ABCF00657695 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 772F65401FA9ABCF00657695;
 					};
@@ -372,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxLocation-RxLocationTests/Pods-RxLocation-RxLocationTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		35C5590B8CD22B99EFBC952C /* [CP] Check Pods Manifest.lock */ = {
@@ -386,7 +417,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxLocationTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxLocation-RxLocationTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -399,18 +430,32 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxLocation-RxLocationTests/Pods-RxLocation-RxLocationTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+				"${BUILT_PRODUCTS_DIR}/RxExpect/RxExpect.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxExpect.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxLocation-RxLocationTests/Pods-RxLocation-RxLocationTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B35D4AC253467369680FEAC /* [CP] Copy Pods Resources */ = {
@@ -506,6 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */,
+				7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,16 +719,18 @@
 		};
 		772F65621FA9ABCF00657695 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D823921A97528A74FB53D76F /* Pods-RxLocationTests.debug.xcconfig */;
+			baseConfigurationReference = 143751E752CE39C4760572E4 /* Pods-RxLocation-RxLocationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MM4NKSSYPK;
 				INFOPLIST_FILE = RxLocationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vadiminc.RxLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxLocation.app/RxLocation";
@@ -690,10 +739,11 @@
 		};
 		772F65631FA9ABCF00657695 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0BEFE06DED85649AD47656 /* Pods-RxLocationTests.release.xcconfig */;
+			baseConfigurationReference = 6B1DE4107B4AE3C93422E8A7 /* Pods-RxLocation-RxLocationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MM4NKSSYPK;
 				INFOPLIST_FILE = RxLocationTests/Info.plist;

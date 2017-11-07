@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import RxSwift
 import CoreLocation
 
 final class ServiceAssembly: Assembly {
@@ -19,5 +20,7 @@ final class ServiceAssembly: Assembly {
         return manager
       }
     }).inObjectScope(.container)
+    container.autoregister(TrackingAlgorithm.self, initializer: TrackingService.init)
+    container.register(SchedulerType.self) { _ in SerialDispatchQueueScheduler(qos: .default) }
   }
 }

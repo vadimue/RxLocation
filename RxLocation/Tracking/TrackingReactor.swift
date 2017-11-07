@@ -31,10 +31,10 @@ final class TrackingReactor: Reactor {
 
   let initialState: State
 
-  let locationService: LocationServiceProtocol
+  let trackingService: TrackingAlgorithm
 
-  init(locationService: LocationServiceProtocol) {
-    self.locationService = locationService
+  init(trackingService: TrackingAlgorithm) {
+    self.trackingService = trackingService
     initialState = State(isAutoTrackingActive: true, activePosition: CLLocation(), lastPosition: CLLocation())
   }
 
@@ -68,7 +68,7 @@ final class TrackingReactor: Reactor {
         guard let `self` = self else { return .empty() }
         switch mutating {
         case .toggleAutoTracking(let isActive):
-          return isActive ? self.locationService.location() : .empty()
+          return isActive ? self.trackingService.track() : .empty()
         default:
           return .never()
         }

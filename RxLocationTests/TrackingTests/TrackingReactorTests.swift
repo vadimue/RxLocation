@@ -13,11 +13,11 @@ import XCTest
 class TrackingReactorTests: XCTestCase {
 
   var reactor: TrackingReactor!
-  var locationService: MockLocationService!
+  var trackingService: MockTrackingService!
 
   override func setUp() {
-    locationService = MockLocationService()
-    reactor = TrackingReactor(locationService: locationService)
+    trackingService = MockTrackingService()
+    reactor = TrackingReactor(trackingService: trackingService)
   }
 
   func test_reduce_toggleAutoTrackingTrue_changeAutoTrackingState() {
@@ -45,7 +45,7 @@ class TrackingReactorTests: XCTestCase {
   func test_transformMutation_emitActiveTransmition_changePositionState() {
     // arrange
     let location = CLLocation(latitude: 1.01, longitude: 2.02)
-    locationService.locationReturnValue = .just(location)
+    trackingService.trackReturnValue = .just(location)
 
     // act
     _ = reactor.state

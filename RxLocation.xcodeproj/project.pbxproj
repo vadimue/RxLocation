@@ -30,6 +30,10 @@
 		7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */; };
 		7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */; };
 		77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */; };
+		77EE6C1C1FB1B73300D80AFD /* MockTrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE6C1B1FB1B73300D80AFD /* MockTrackingService.swift */; };
+		77F38A111FB0AC6C00A4068A /* TrackingAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F38A101FB0AC6C00A4068A /* TrackingAlgorithm.swift */; };
+		77F38A131FB0AD3700A4068A /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F38A121FB0AD3700A4068A /* TrackingService.swift */; };
+		77F38A171FB0AD8D00A4068A /* TrackingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */; };
 		9230720BCBA5DEF3F6ABB05C /* Pods_RxLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +76,10 @@
 		7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingReactorTests.swift; sourceTree = "<group>"; };
 		7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		77EE6C1B1FB1B73300D80AFD /* MockTrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackingService.swift; sourceTree = "<group>"; };
+		77F38A101FB0AC6C00A4068A /* TrackingAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingAlgorithm.swift; sourceTree = "<group>"; };
+		77F38A121FB0AD3700A4068A /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingServiceTests.swift; sourceTree = "<group>"; };
 		B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation_RxLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11B282D8B4725173774F364 /* Pods-RxLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 				7780D5A11FACB5CB000CE951 /* IoC */,
 				7719823E1FAB156E00C1165E /* Initializers */,
 				771982381FAB088500C1165E /* Location */,
+				77F38A0F1FB0AC2300A4068A /* Tracking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				7780D5AD1FACC3C9000CE951 /* Mocks */,
+				77F38A141FB0AD6300A4068A /* Services */,
 				7780D5A81FACC23A000CE951 /* TrackingTests */,
 				772F655B1FA9ABCF00657695 /* Info.plist */,
 			);
@@ -259,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */,
+				77EE6C1B1FB1B73300D80AFD /* MockTrackingService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -270,6 +281,31 @@
 				771982431FAB189B00C1165E /* UILabel+Rx.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77F38A0F1FB0AC2300A4068A /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				77F38A101FB0AC6C00A4068A /* TrackingAlgorithm.swift */,
+				77F38A121FB0AD3700A4068A /* TrackingService.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		77F38A141FB0AD6300A4068A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77F38A151FB0AD7000A4068A /* Tracking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77F38A151FB0AD7000A4068A /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */,
+			);
+			path = Tracking;
 			sourceTree = "<group>";
 		};
 		7AFC10E1F4E8700A2DCDA326 /* Pods */ = {
@@ -532,10 +568,12 @@
 				771553D31FA9D22600459045 /* TrackingViewController.swift in Sources */,
 				7719823C1FAB08BE00C1165E /* LocationServiceProtocol.swift in Sources */,
 				771553CE1FA9CF0900459045 /* main.swift in Sources */,
+				77F38A131FB0AD3700A4068A /* TrackingService.swift in Sources */,
 				7719823B1FAB08BE00C1165E /* LocationService.swift in Sources */,
 				7780D59C1FACA7B7000CE951 /* TrackingAssembly.swift in Sources */,
 				7780D5A51FACB5CB000CE951 /* Injector.swift in Sources */,
 				771982401FAB158100C1165E /* Initializer.swift in Sources */,
+				77F38A111FB0AC6C00A4068A /* TrackingAlgorithm.swift in Sources */,
 				771982421FAB159600C1165E /* LocationInitializer.swift in Sources */,
 				771982441FAB189B00C1165E /* UILabel+Rx.swift in Sources */,
 				77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */,
@@ -553,6 +591,8 @@
 			files = (
 				7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */,
 				7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */,
+				77EE6C1C1FB1B73300D80AFD /* MockTrackingService.swift in Sources */,
+				77F38A171FB0AD8D00A4068A /* TrackingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

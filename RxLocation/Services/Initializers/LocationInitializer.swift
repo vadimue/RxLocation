@@ -18,7 +18,7 @@ final class LocationInitializer: Initializer {
 
   func initialize() {
     _ = self.locationService?
-      .permissionRequest(targetLevel: .whenInUse)
+      .permissionRequest(targetLevel: .always)
       .subscribe(onNext: { level in
         print(level)
       }, onError: { error in

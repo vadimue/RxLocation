@@ -378,6 +378,11 @@
 					772F65401FA9ABCF00657695 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					772F65541FA9ABCF00657695 = {
 						CreatedOnToolsVersion = 9.0;

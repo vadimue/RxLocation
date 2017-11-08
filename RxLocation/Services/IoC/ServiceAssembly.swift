@@ -18,6 +18,7 @@ final class ServiceAssembly: Assembly {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.distanceFilter = 10
+        manager.allowsBackgroundLocationUpdates = true
         return manager
       }
     }).inObjectScope(.container)

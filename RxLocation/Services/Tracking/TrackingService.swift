@@ -13,6 +13,7 @@ import RxSwift
 class TrackingService: TrackingAlgorithm {
 
   let repeatingTimePeriod: Double = 60
+  let intervalForCheckingPosition: Double = 10
   let mindlessDistanceInMeters: Double = 10
 
   let locationService: LocationServiceProtocol
@@ -36,6 +37,7 @@ class TrackingService: TrackingAlgorithm {
         .map { $0.current }
 
     let validLocations = Observable.of(firstLocation,locationChangedMoreThan10Meters).merge()
+      .throttle(intervalForCheckingPosition, scheduler: timerScheduler)
 
     let oncePerMinuteLocation = validLocations
         .flatMapLatest { [weak self] _ -> Observable<CLLocation> in
@@ -43,13 +45,8 @@ class TrackingService: TrackingAlgorithm {
           return Observable<Int>.interval(self.repeatingTimePeriod, scheduler: self.timerScheduler)
             .withLatestFrom(location)
     }
-    
-    return Observable.of(validLocations, oncePerMinuteLocation).merge()
-  }
 
-  private func repeatLastLocationEveryMinute(_ lastLocation: Observable<CLLocation>) -> Observable<CLLocation> {
-    return Observable<Int>.interval(repeatingTimePeriod, scheduler: timerScheduler)
-      .withLatestFrom(lastLocation)
+    return Observable.of(validLocations, oncePerMinuteLocation).merge()
   }
 
   private func log(_ location: CLLocation, _ log: String = "") {

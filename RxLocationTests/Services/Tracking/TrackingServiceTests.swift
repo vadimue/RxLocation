@@ -31,7 +31,7 @@ class TrackingServiceTests: XCTestCase {
     // arrange
     let observable = scheduler.createHotObservable([
       next(0, someLocation)
-      ]).asObservable()
+    ]).asObservable()
     locationService.locationReturnValue = observable
 
     let results = scheduler.createObserver(CLLocation.self)
@@ -55,7 +55,7 @@ class TrackingServiceTests: XCTestCase {
       next(480, someLocation),
       next(540, someLocation),
       next(600, someLocation)
-      ])
+    ])
   }
 
   var finishTime: Int {
@@ -72,7 +72,7 @@ class TrackingServiceTests: XCTestCase {
       next(0, someLocation),
       next(10, location2),
       next(20, location3)
-      ]).asObservable()
+    ]).asObservable()
     locationService.locationReturnValue = observable
 
     let results = scheduler.createObserver(CLLocation.self)
@@ -98,7 +98,7 @@ class TrackingServiceTests: XCTestCase {
       next(0, someLocation),
       next(10, location2),
       next(20, location3)
-      ]).asObservable()
+    ]).asObservable()
     locationService.locationReturnValue = observable
 
     let results = scheduler.createObserver(CLLocation.self)
@@ -129,7 +129,7 @@ class TrackingServiceTests: XCTestCase {
       next(80, location3),
       next(150, location4),
       next(170, location5),
-      ]).asObservable()
+    ]).asObservable()
     locationService.locationReturnValue = observable
 
     let results = scheduler.createObserver(CLLocation.self)
@@ -147,7 +147,37 @@ class TrackingServiceTests: XCTestCase {
       next(120, location3),
       next(150, location4),
       next(210, location5),
-      ])
+    ])
+  }
+
+  func test_track_positionChangedFast_doesNotEmitMoreOftenThanEvery10Seconds() {
+    let location2 = CLLocation(latitude: 1.00010000, longitude: 2.00010000)
+    let location3 = CLLocation(latitude: 1.00020000, longitude: 2.00020000)
+    let location4 = CLLocation(latitude: 1.00030000, longitude: 2.00030000)
+    let location5 = CLLocation(latitude: 1.00040000, longitude: 2.00040000)
+    let observable = scheduler.createHotObservable([
+      next(0, someLocation),
+      next(3, location2),
+      next(5, location3),
+      next(12, location4),
+      next(17, location5),
+    ]).asObservable()
+    locationService.locationReturnValue = observable
+
+    let results = scheduler.createObserver(CLLocation.self)
+    var subscription: Disposable! = nil
+
+    // act
+    subscription = self.service.track().subscribe(results)
+    scheduler.scheduleAt(50) { subscription.dispose() }
+    scheduler.start()
+
+    // assert
+    XCTAssertEqual(results.events, [
+      next(0, someLocation),
+      next(10, location3),
+      next(20, location5),
+    ])
   }
 
 }

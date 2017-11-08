@@ -25,28 +25,28 @@ class TrackingService: TrackingAlgorithm {
   }
 
   func track() -> Observable<CLLocation> {
-    let location = self.locationService.location()
+    let allLocations = self.locationService.location()
       .do(onNext: { self.log($0, "update: ") })
       .share(replay: 1, scope: SubjectLifetimeScope.forever)
 
-    let firstLocation = location.take(1)
+    let firstLocation = allLocations.take(1)
 
-    let locationChangedMoreThan10Meters =
-      Observable.zip(location, location.skip(1)) { (previous: $0, current: $1) }
+    let locationsChangedMoreThan10Meters =
+      Observable.zip(allLocations, allLocations.skip(1)) { (previous: $0, current: $1) }
         .filter { $0.current.distance(from: $0.previous) > self.mindlessDistanceInMeters }
         .map { $0.current }
 
-    let validLocations = Observable.of(firstLocation,locationChangedMoreThan10Meters).merge()
+    let validLocations = Observable.of(firstLocation, locationsChangedMoreThan10Meters).merge()
       .throttle(intervalForCheckingPosition, scheduler: timerScheduler)
 
-    let oncePerMinuteLocation = validLocations
+    let oncePerMinuteLocations = validLocations
         .flatMapLatest { [weak self] _ -> Observable<CLLocation> in
           guard let `self` = self else { return .empty() }
           return Observable<Int>.interval(self.repeatingTimePeriod, scheduler: self.timerScheduler)
-            .withLatestFrom(location)
+            .withLatestFrom(allLocations)
     }
 
-    return Observable.of(validLocations, oncePerMinuteLocation).merge()
+    return Observable.of(validLocations, oncePerMinuteLocations).merge()
   }
 
   private func log(_ location: CLLocation, _ log: String = "") {

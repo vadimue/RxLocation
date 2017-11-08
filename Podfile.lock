@@ -3,10 +3,6 @@ PODS:
     - RxSwift (>= 4.0.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
-  - RxExpect (1.0.0):
-    - RxCocoa (>= 4.0.0)
-    - RxSwift (>= 4.0.0)
-    - RxTest (>= 4.0.0)
   - RxOptional (3.2.0):
     - RxCocoa
     - RxSwift
@@ -22,7 +18,6 @@ PODS:
 DEPENDENCIES:
   - ReactorKit
   - RxCocoa
-  - RxExpect
   - RxOptional
   - RxSwift
   - RxTest
@@ -33,7 +28,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ReactorKit: 1b376c5d2551a1a6536f3e777a79f4bbaa1d36a6
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxExpect: 89b390f34dcebf2a8741b5ac9ad87b29aa28f6b0
   RxOptional: d2d6a68064bc16b4801332c40663967f481b0234
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   RxTest: 0041e792cede35e53e4749f378d21482af0e9d12
@@ -41,6 +35,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: 5679d974239938effc66e4d3c40b7baa8017f3bf
+PODFILE CHECKSUM: b1637b4f68e8080b4e4abbe67e288c94c4436c95
 
 COCOAPODS: 1.3.1

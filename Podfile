@@ -17,7 +17,6 @@ target 'RxLocation' do
   # Testing
   target 'RxLocationTests' do
     pod 'RxTest'
-    pod 'RxExpect'
   end
 
 end

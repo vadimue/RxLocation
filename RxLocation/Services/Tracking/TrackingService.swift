@@ -25,48 +25,31 @@ class TrackingService: TrackingAlgorithm {
 
   func track() -> Observable<CLLocation> {
     let location = self.locationService.location()
-      .share(replay: 1, scope: SubjectLifetimeScope.forever)
       .do(onNext: { self.log($0, "update: ") })
+      .share(replay: 1, scope: SubjectLifetimeScope.forever)
 
     let firstLocation = location.take(1)
 
     let locationChangedMoreThan10Meters =
       Observable.zip(location, location.skip(1)) { (previous: $0, current: $1) }
-        //.do(onNext: { print("zip: \($0.current.coordinate.latitude) \($0.current.coordinate.longitude) + \($0.previous.coordinate.latitude) \($0.previous.coordinate.longitude)") })
-        .filter {
-          let meters = $0.current.distance(from: $0.previous)
-          //print("distance in meters: \(meters)")
-          return meters > self.mindlessDistanceInMeters
-        }
+        .filter { $0.current.distance(from: $0.previous) > self.mindlessDistanceInMeters }
         .map { $0.current }
-    //.do(onNext: { self.log($0, "after zip:") })
 
-    let validLocations = Observable.of(firstLocation
-      //      .do(onNext: { self.log($0, "finished take first 10: ") })
-      ,
-      locationChangedMoreThan10Meters
-      //                                        .do(onNext: { self.log($0, "finished more than 10: ") })
-      )
-      .merge()
+    let validLocations = Observable.of(firstLocation,locationChangedMoreThan10Meters).merge()
 
-    let oncePerMinuteLocation =
-      validLocations
-        .do(onNext: { self.log($0, "per minute with latest from:") })
+    let oncePerMinuteLocation = validLocations
         .flatMapLatest { [weak self] _ -> Observable<CLLocation> in
           guard let `self` = self else { return .empty() }
-          return self.repeatLastLocationEveryMinute(location)
+          return Observable<Int>.interval(self.repeatingTimePeriod, scheduler: self.timerScheduler)
+            .withLatestFrom(location)
     }
     
-    return Observable.of(validLocations,
-                         oncePerMinuteLocation
-      //                          .do(onNext: { self.log($0, "finished per minute: ") })
-      ).merge()
+    return Observable.of(validLocations, oncePerMinuteLocation).merge()
   }
 
   private func repeatLastLocationEveryMinute(_ lastLocation: Observable<CLLocation>) -> Observable<CLLocation> {
     return Observable<Int>.interval(repeatingTimePeriod, scheduler: timerScheduler)
       .withLatestFrom(lastLocation)
-      .do(onNext: { self.log($0, "once per minute location:") })
   }
 
   private func log(_ location: CLLocation, _ log: String = "") {

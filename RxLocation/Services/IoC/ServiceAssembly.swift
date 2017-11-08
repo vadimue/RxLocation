@@ -17,6 +17,7 @@ final class ServiceAssembly: Assembly {
       LocationService {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = 10
         return manager
       }
     }).inObjectScope(.container)

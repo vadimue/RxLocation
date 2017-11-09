@@ -62,7 +62,6 @@ class TrackingViewController: UIViewController, StoryboardView {
 
     transferPositionButton.rx.tap
       .map { Reactor.Action.tranferCurrentPosition }
-      .debug()
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
   }

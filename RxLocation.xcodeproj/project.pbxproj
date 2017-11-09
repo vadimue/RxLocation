@@ -30,6 +30,7 @@
 		7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */; };
 		7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */; };
 		77AE8A3A1FA9FEFB00BB51B6 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */; };
+		77E0089B1FB4A94A00DF3571 /* TrackingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0089A1FB4A94A00DF3571 /* TrackingViewControllerTests.swift */; };
 		77EE6C1C1FB1B73300D80AFD /* MockTrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE6C1B1FB1B73300D80AFD /* MockTrackingService.swift */; };
 		77F38A111FB0AC6C00A4068A /* TrackingAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F38A101FB0AC6C00A4068A /* TrackingAlgorithm.swift */; };
 		77F38A131FB0AD3700A4068A /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F38A121FB0AD3700A4068A /* TrackingService.swift */; };
@@ -76,6 +77,7 @@
 		7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingReactorTests.swift; sourceTree = "<group>"; };
 		7780D5AE1FACC3E4000CE951 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		77AE8A391FA9FEFB00BB51B6 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		77E0089A1FB4A94A00DF3571 /* TrackingViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingViewControllerTests.swift; path = RxLocationTests/TrackingTests/TrackingViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		77EE6C1B1FB1B73300D80AFD /* MockTrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTrackingService.swift; sourceTree = "<group>"; };
 		77F38A101FB0AC6C00A4068A /* TrackingAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingAlgorithm.swift; sourceTree = "<group>"; };
 		77F38A121FB0AD3700A4068A /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		77F38A151FB0AD7000A4068A /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				77E0089A1FB4A94A00DF3571 /* TrackingViewControllerTests.swift */,
 				77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */,
 			);
 			path = Tracking;
@@ -594,6 +597,7 @@
 			files = (
 				7780D5AF1FACC3E4000CE951 /* MockLocationService.swift in Sources */,
 				7780D5AC1FACC279000CE951 /* TrackingReactorTests.swift in Sources */,
+				77E0089B1FB4A94A00DF3571 /* TrackingViewControllerTests.swift in Sources */,
 				77EE6C1C1FB1B73300D80AFD /* MockTrackingService.swift in Sources */,
 				77F38A171FB0AD8D00A4068A /* TrackingServiceTests.swift in Sources */,
 			);

@@ -13,7 +13,7 @@
         <!--Tracking-->
         <scene sceneID="03o-79-5lU">
             <objects>
-                <viewController id="IWp-aI-koy" customClass="TrackingViewController" customModule="RxLocation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackingViewController" id="IWp-aI-koy" customClass="TrackingViewController" customModule="RxLocation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4he-Pp-ROP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

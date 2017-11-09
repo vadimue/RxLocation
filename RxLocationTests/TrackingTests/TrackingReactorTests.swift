@@ -14,10 +14,12 @@ class TrackingReactorTests: XCTestCase {
 
   var reactor: TrackingReactor!
   var trackingService: MockTrackingService!
+  var locationServive: MockLocationService!
 
   override func setUp() {
     trackingService = MockTrackingService()
-    reactor = TrackingReactor(trackingService: trackingService)
+    locationServive = MockLocationService()
+    reactor = TrackingReactor(trackingService: trackingService, locationService: locationServive)
   }
 
   func test_reduce_toggleAutoTrackingTrue_changeAutoTrackingState() {

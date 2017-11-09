@@ -20,7 +20,6 @@ class TrackingViewController: UIViewController, StoryboardView {
   @IBOutlet weak var lastPositionLabel: UILabel!
   @IBOutlet weak var lastTimeLabel: UILabel!
   @IBOutlet weak var transferPositionButton: UIButton!
-  @IBOutlet weak var showPositionOnMapButton: UIButton!
 
   func bind(reactor: TrackingReactor) {
 
@@ -58,6 +57,12 @@ class TrackingViewController: UIViewController, StoryboardView {
     // Action
     autoTrackingSwitch.rx.value
       .map(Reactor.Action.toggleAutoTracking)
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+
+    transferPositionButton.rx.tap
+      .map { Reactor.Action.tranferCurrentPosition }
+      .debug()
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
   }

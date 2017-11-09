@@ -10,6 +10,7 @@ import ReactorKit
 import CoreLocation
 import RxCocoa
 import RxSwift
+import RxOptional
 
 final class TrackingReactor: Reactor {
 
@@ -32,9 +33,11 @@ final class TrackingReactor: Reactor {
   let initialState: State
 
   let trackingService: TrackingAlgorithm
+  let locationService: LocationServiceProtocol
 
-  init(trackingService: TrackingAlgorithm) {
+  init(trackingService: TrackingAlgorithm, locationService: LocationServiceProtocol) {
     self.trackingService = trackingService
+    self.locationService = locationService
     initialState = State(isAutoTrackingActive: true, activePosition: CLLocation(), lastPosition: CLLocation())
   }
 
@@ -43,7 +46,8 @@ final class TrackingReactor: Reactor {
     case .toggleAutoTracking(let enabled):
       return .just(.toggleAutoTracking(enabled))
     case .tranferCurrentPosition:
-      return .empty()
+      return locationService.singleLocation()
+        .map(Mutation.updateActivePosition)
     }
   }
 
@@ -64,14 +68,20 @@ final class TrackingReactor: Reactor {
   }
 
   private func getActivePosition(_ mutation: Observable<Mutation>) -> Observable<Mutation> {
-    return mutation.flatMapLatest { [weak self] mutating -> Observable<CLLocation> in
-        guard let `self` = self else { return .empty() }
-        switch mutating {
+    return mutation
+      .map { mutation -> Bool? in
+        switch mutation {
         case .toggleAutoTracking(let isActive):
-          return isActive ? self.trackingService.track() : .empty()
+          return isActive
         default:
-          return .never()
+          return nil
         }
-      }.map(Mutation.updateActivePosition)
+      }
+      .filterNil()
+      .flatMapLatest { [weak self] enabled -> Observable<CLLocation> in
+        guard let `self` = self, enabled else { return .empty() }
+        return self.trackingService.track()
+      }
+      .map (Mutation.updateActivePosition)
   }
 }

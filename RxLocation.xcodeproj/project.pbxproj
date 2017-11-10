@@ -262,6 +262,7 @@
 		7780D5A81FACC23A000CE951 /* TrackingTests */ = {
 			isa = PBXGroup;
 			children = (
+				77E0089A1FB4A94A00DF3571 /* TrackingViewControllerTests.swift */,
 				7780D5AB1FACC279000CE951 /* TrackingReactorTests.swift */,
 			);
 			path = TrackingTests;
@@ -305,7 +306,6 @@
 		77F38A151FB0AD7000A4068A /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				77E0089A1FB4A94A00DF3571 /* TrackingViewControllerTests.swift */,
 				77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */,
 			);
 			path = Tracking;

@@ -32,7 +32,7 @@ and implemented in ![TrackingService](RxLocation/Services/Tracking/TrackingServi
 Screenshots
 -----------
 
-![rxlocation](Screens/Tracking.png)
+<img src="Screens/Tracking.png" width="360">
 
 
 License

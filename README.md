@@ -20,13 +20,13 @@ Features
 Business Requirements
 ------------
 
-Transferring of the position data should be periodic and dependent on the movement and the following rules:
-* The transmission is to be performed at least once per minute (at standstill) and at position change of more than 10 m.
-* Transmission should not take place faster than every 10 seconds.
-* Button "Transfer current position" should immediately request and send current coordinates of device. 
+Transferring of the position data should be periodic and depend on the movement and the following rules:
+* The transmission has to be performed at least once per minute (at standstill) and on position change of more than 10 m;
+* Transmission should not happen faster than every 10 seconds;
+* Button "Transfer current position" should immediately request and send current coordinates of device.
 
-Most of this requirements are described in the ![TrackingServiceTests](RxLocationTests/Services/Tracking/TrackingServiceTests.swift)
-and implemented in ![TrackingService](RxLocation/Services/Tracking/TrackingService.swift) 
+Most of this requirements are described in the [TrackingServiceTests](RxLocationTests/Services/Tracking/TrackingServiceTests.swift)
+and implemented in [TrackingService](RxLocation/Services/Tracking/TrackingService.swift) 
 
 
 Screenshots

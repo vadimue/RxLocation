@@ -6,13 +6,13 @@ cache:
   - bundler
   - cocoapods
 
-  env:
-    global:
-      - WORKSPACE="RxLocation.xcworkspace"
-      - SCHEME="RxLocation"
-      - IOS_SDK="iphonesimulator11.1"
-    matrix:
-      - SDK="$IOS_SDK"  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.1"
+env:
+  global:
+    - WORKSPACE="RxLocation.xcworkspace"
+    - SCHEME="RxLocation"
+    - IOS_SDK="iphonesimulator11.1"
+  matrix:
+    - SDK="$IOS_SDK"  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.1"
 
 install:
   - bundle install --deployment
@@ -22,7 +22,7 @@ install:
 
 before_script:
   - set -o pipefail
-  
+
 script:
   - xcodebuild clean build test
   - workspace "$WORKSPACE"

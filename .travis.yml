@@ -1,0 +1,32 @@
+language: objective-c
+osx_image: xcode9.1
+sudo: false
+
+cache:
+  - bundler
+  - cocoapods
+
+  env:
+    global:
+      - WORKSPACE="RxLocation.xcworkspace"
+      - SCHEME="RxLocation"
+      - IOS_SDK="iphonesimulator11.1"
+    matrix:
+      - SDK="$IOS_SDK"  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.1"
+
+install:
+  - bundle install --deployment
+  - bundle exec pod --version
+  - bundle exec pod repo update --verbose
+  - bundle exec pod install
+
+before_script:
+  - set -o pipefail
+  
+script:
+  - xcodebuild clean build test
+  - workspace "$WORKSPACE"
+  - scheme "$SCHEME"
+  - sdk "$SDK"
+  - destination "$DESTINATION"
+  - configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c

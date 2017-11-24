@@ -25,8 +25,8 @@ before_script:
 
 script:
   - xcodebuild clean build test
-  -workspace "$WORKSPACE"
-  -scheme "$SCHEME"
-  -sdk "$SDK"
-  -destination "$DESTINATION"
-  -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+    -workspace "$WORKSPACE"
+    -scheme "$SCHEME"
+    -sdk "$SDK"
+    -destination "$DESTINATION"
+    -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c

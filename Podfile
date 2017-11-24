@@ -16,7 +16,12 @@ target 'RxLocation' do
 
   # Testing
   target 'RxLocationTests' do
+    inherit! :complete
     pod 'RxTest'
   end
 
+end
+
+post_install do |installer|
+  pods_dir = File.dirname(installer.pods_project.path)
 end

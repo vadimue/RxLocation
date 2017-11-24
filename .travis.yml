@@ -6,6 +6,14 @@ cache:
   - bundler
   - cocoapods
 
+env:
+  global:
+    - WORKSPACE="RxLocation.xcworkspace"
+    - SCHEME="RxLocation"
+    - IOS_SDK="iphonesimulator11.1"
+  matrix:
+    - SDK="$IOS_SDK"  DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.1"
+
 install:
   - bundle install --deployment
   - bundle exec pod --version
@@ -17,8 +25,8 @@ before_script:
 
 script:
   - xcodebuild clean build test
-  - workspace RxLocation.xcworkspace
-  - scheme RxLocation
-  - sdk iphonesimulator11.1
-  - destination platform=iOS Simulator,name=iPhone 8,OS=11.1
-  - configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+  -workspace "$WORKSPACE"
+  -scheme "$SCHEME"
+  -sdk "$SDK"
+  -destination "$DESTINATION"
+  -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c

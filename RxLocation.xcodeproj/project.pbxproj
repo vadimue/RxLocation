@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1050D725B090004D2EAB3D7D /* Pods_RxLocation_RxLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */; };
-		702C5237B325836459BB79A6 /* Pods_RxLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */; };
 		771553CE1FA9CF0900459045 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553CD1FA9CF0900459045 /* main.swift */; };
 		771553D31FA9D22600459045 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553D21FA9D22600459045 /* TrackingViewController.swift */; };
 		771553D51FA9D23A00459045 /* TrackingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771553D41FA9D23A00459045 /* TrackingReactor.swift */; };
@@ -83,10 +81,8 @@
 		77F38A121FB0AD3700A4068A /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
 		77F38A161FB0AD8D00A4068A /* TrackingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingServiceTests.swift; sourceTree = "<group>"; };
 		B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocation_RxLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11B282D8B4725173774F364 /* Pods-RxLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocation/Pods-RxLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		D823921A97528A74FB53D76F /* Pods-RxLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0BEFE06DED85649AD47656 /* Pods-RxLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLocationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxLocationTests/Pods-RxLocationTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,8 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				702C5237B325836459BB79A6 /* Pods_RxLocationTests.framework in Frameworks */,
-				1050D725B090004D2EAB3D7D /* Pods_RxLocation_RxLocationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				B1B4D32FDC90085DFA013961 /* Pods_RxLocation.framework */,
-				DB44CB35553F979407E5EA91 /* Pods_RxLocationTests.framework */,
-				B1D0CDE7CF08A552569B9FF6 /* Pods_RxLocation_RxLocationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
